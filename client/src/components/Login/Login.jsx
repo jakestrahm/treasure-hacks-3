@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 const Login = (props) => {
     const [state, setState] = useState({
         email: "",
@@ -44,16 +45,16 @@ const Login = (props) => {
                     >
                         Login
                     </button>
+                    <p className="text-xs text-gray-400 content-end mt-3 flex justify-end item-center pr-1">
+                        New to ReminderPal? &nbsp;
+                        <a className="text-xs text-gray-400 content-start underline">
+                            Sign Up
+                        </a>
+                    </p>
                 </div>
             </form>
         </div>
     );
 };
-const mapStateToProps = (state) => ({
-    //session
-    //errors
-});
-const mapDispatchToProps = (dispatch) => ({
-    //login
-});
+
 export default Login;

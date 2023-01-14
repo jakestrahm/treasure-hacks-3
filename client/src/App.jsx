@@ -182,8 +182,8 @@ function App() {
         <>
             <NavBar />
             <Item />
-            <SignUp />
-            {/* <Login /> */}
+            {/* <SignUp /> */}
+            <Login />
         </>
     )
 }
