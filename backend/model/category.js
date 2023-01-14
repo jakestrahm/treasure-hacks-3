@@ -3,10 +3,10 @@ const { Schema, SchemaTypes} = mongoose;
 
 const categorySchema = new Schema({
     id: SchemaTypes.String,
-    userId: SchemaTypes.String,
+    accountId: SchemaTypes.String,
     name: SchemaTypes.String,
     createdAt: SchemaTypes.Number,
-    updatedAt: SchemaTypes,
+    updatedAt: SchemaTypes.Number,
 });
 
 const CategoryModel = mongoose.model("Category", categorySchema, "categories");
