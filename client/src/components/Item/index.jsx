@@ -1,15 +1,14 @@
-import { dividerClasses } from "@mui/material";
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { changeName, selectItem } from '../../features/item/itemSlice'
+import Countdown from '../Countdown'
 
-const Item = () => {
-    const item = useSelector(selectItem)
-    const dispatch = useDispatch()
+const Item = ({ item }) => {
+    console.log(item)
+    // const item = useSelector(selectItem)
+    // const dispatch = useDispatch()
 
     const [editing, setEditing] = useState(false);
-    const [myItem, setItem] = useState(item);
-
 
 
     const handleClick = event => {
@@ -19,7 +18,7 @@ const Item = () => {
                 //change details's item
                 console.log('single click');
 
-                dispatch(changeName("did the name change?"))
+                // dispatch(changeName("did the name change?"))
                 break;
             }
             case 2: {
@@ -40,25 +39,32 @@ const Item = () => {
 
     //... when it's too long, max preview count?
     return (
-        <div>
+        <div className="pb-1 pl-1">
             {
                 editing === false ?
                     <button
                         onClick={handleClick}
-                        className="btn w-full max-w-xs"
-                    >{item.name} - {item.dueDate}
+                        className="btn w-full max-w-xs bg-[#ffffff] text-[#2d2d2d]
+                hover:bg-[#ffffff] normal-case">
+                        <div>
+                            <div><Countdown time={item.dueDate} /></div>
+                            <div>{item.name}</div>
+                        </div>
                     </button>
                     :
                     <input
                         autoFocus
                         type="text"
                         placeholder={item.name}
-                        className="btn w-full max-w-xs"
+                        className="btn w-full max-w-xs bg-[#ffffff] text-[#2d2d2d]
+                hover:bg-[#ffffff] normal-case
+                border-transparent focus:border-transparent focus:ring-0
+                "
                         onBlur={handleFocusLoss}
                         defaultValue={item.name}
                     />
             }
-        </div>
+        </div >
     );
 
 }

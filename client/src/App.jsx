@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import SignUp from './components/SignUp/SignUp'
 import Item from './components/Item'
 import Login from './components/Login/Login'
+import ItemList from './components/ItemList'
 
 const SAMPLE_ITEMS = [
     {
@@ -180,7 +181,7 @@ const ITEM = {
 function App() {
     return (
         <>
-            <Item />
+            <ItemList items={SAMPLE_ITEMS} />
             <SignUp />
             {/* <Login /> */}
         </>
