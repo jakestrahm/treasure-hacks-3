@@ -8,6 +8,13 @@ app.get('/',(req,res)=>{
   res.send('root file');
 });
 
+app.post('/api/auth/tokens',(req,res) =>{
+  res.send({token : 'J12KL3H1F'})
+});
+app.post('/api/auth/revoke',(req,res) =>{
+  res.send({response : 'revoked!'});
+});
+
 app.get('/api/account/:id',(req,res) =>{
   res.send({id : 999});
 });
@@ -20,7 +27,7 @@ app.get('/api/accounts', (req,res) =>{
       ]
     }
   );
-})
+});
 
 app.patch('/api/account',(req,res) =>{
   res.send({account : 'updated info!'});
