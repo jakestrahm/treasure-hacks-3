@@ -6,6 +6,7 @@ import Item from './components/Item'
 import Login from './components/Login/Login'
 import ItemList from './components/ItemList'
 
+import NavBar from './components/NavBar/NavBar'
 const SAMPLE_ITEMS = [
     {
         userId: 0,
@@ -181,7 +182,8 @@ const ITEM = {
 function App() {
     return (
         <>
-            <ItemList items={SAMPLE_ITEMS} />
+            <NavBar />
+            <Item />
             <SignUp />
             {/* <Login /> */}
         </>

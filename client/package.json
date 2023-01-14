@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.4",
+    "@reduxjs/toolkit": "^1.9.1",
     "autoprefixer": "^10.4.13",
     "daisyui": "^2.46.1",
     "postcss": "^8.4.21",
