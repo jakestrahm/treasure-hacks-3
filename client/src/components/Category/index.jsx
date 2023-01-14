@@ -7,7 +7,7 @@ const Category = ({ category }) => {
     }
     return (
         <div>
-            <button className="btn btn-outline" onClick={handleClick} >{category}</button>
+            <button className="btn btn-outline" onClick={handleClick} >{category.name}</button>
         </div>
     )
 }
