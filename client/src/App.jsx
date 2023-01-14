@@ -180,7 +180,7 @@ const ITEM = {
 function App() {
     return (
         <>
-            {/* <Item item={ITEM} /> */}
+            <Item />
             <SignUp />
             {/* <Login /> */}
         </>

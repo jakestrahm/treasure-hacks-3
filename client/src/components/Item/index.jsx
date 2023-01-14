@@ -1,10 +1,15 @@
 import { dividerClasses } from "@mui/material";
 import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux'
+import { changeName, selectItem } from '../../features/item/itemSlice'
 
-const Item = ({ item }) => {
+const Item = () => {
+    const item = useSelector(selectItem)
+    const dispatch = useDispatch()
 
     const [editing, setEditing] = useState(false);
     const [myItem, setItem] = useState(item);
+
 
 
     const handleClick = event => {
@@ -13,6 +18,8 @@ const Item = ({ item }) => {
             case 1: {
                 //change details's item
                 console.log('single click');
+
+                dispatch(changeName("did the name change?"))
                 break;
             }
             case 2: {
