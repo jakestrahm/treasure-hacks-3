@@ -6,7 +6,7 @@ const categorySchema = new Schema({
     accountId: SchemaTypes.String,
     name: SchemaTypes.String,
     createdAt: SchemaTypes.Number,
-    updatedAt: SchemaTypes,
+    updatedAt: SchemaTypes.Number,
 });
 
 const CategoryModel = mongoose.model("Category", categorySchema, "categories");
