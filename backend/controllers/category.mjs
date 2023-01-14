@@ -1,19 +1,23 @@
-const getCategory = (req, res) => {
-  res.send({});
-};
-const getCategoryID = (req, res) => {
-  res.send({});
-};
+class CategoryController {
+  constructor() {
+    
+  }
 
-const createCategory = (req, res) => {
-  res.send({});
-};
-const updateCategory = (req, res) => {
-  res.send({});
-};
+  getCategory() {
+    res.send({});
+  }
 
-const deleteCategory = (req, res) => {
-  res.send({});
-};
+  getCatgeories() {
+    res.send({});
+  }
 
-export { getCategory, getCategoryID, createCategory, deleteCategory };
+  updateCategory() {
+    res.send({});
+  }
+
+  deleteCategory() {
+    res.send({});
+  }
+}
+
+export default CategoryController; 
