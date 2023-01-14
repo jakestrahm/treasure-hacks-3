@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema, SchemaTypes} = mongoose;
 
-const ItemModel = mongoose.model('items', new Schema({
+const itemSchema = new Schema({
     id: SchemaTypes.String,
     userId: SchemaTypes.String,
     name: SchemaTypes.String,
@@ -14,6 +14,8 @@ const ItemModel = mongoose.model('items', new Schema({
     dueBy: SchemaTypes.Number,
     createdAt: SchemaTypes.Number,
     updatedAt: SchemaTypes.Number,
-}));
+}); 
+
+const ItemModel = mongoose.model("Item", itemSchema, "items");
 
 export default ItemModel; 

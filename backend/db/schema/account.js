@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema, SchemaTypes} = mongoose;
 
-const AccountModel = mongoose.model('accounts', new Schema({
+const accountSchema = new Schema({
     id: SchemaTypes.String,
     email: SchemaTypes.String,
     password: SchemaTypes.String,
@@ -13,6 +13,8 @@ const AccountModel = mongoose.model('accounts', new Schema({
     emailEnabled: SchemaTypes.Boolean,
     createdAt: SchemaTypes.Number,
     updatedAt: SchemaTypes.Number,
-}));
+});
+
+const AccountModel = mongoose.model("Account", accountSchema, "accounts");
 
 export default AccountModel; 
