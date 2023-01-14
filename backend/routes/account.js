@@ -1,3 +1,9 @@
 const express = require("express");
-const app = express();
-const port = process.env.PORT || 8080;
+const router = express.Router();
+
+const { getAccountID, getAccounts } = require("../views/userView");
+
+router.get("/account", getAccounts);
+router.get("/account/:id", getAccountID);
+
+module.exports = router;

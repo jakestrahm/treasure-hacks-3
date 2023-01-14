@@ -1,6 +1,6 @@
 const { DummyAccounts } = require("../modals/DummyAccounts");
 
-const QueryAccountById = (id) => {
+const getAccountID = (id) => {
   let account;
   DummyAccounts.forEach((accountData) => {
     if (accountData.id === Number(id)) {
@@ -9,11 +9,11 @@ const QueryAccountById = (id) => {
   });
   return account;
 };
-const QueryListOfAccounts = () => {
+const getAccounts = () => {
   return DummyAccounts;
 };
 
 module.exports = {
-  QueryAccountById,
-  QueryListOfAccounts,
+  getAccountID,
+  getAccounts,
 };
