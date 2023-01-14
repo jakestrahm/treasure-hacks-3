@@ -21,9 +21,9 @@ const Login = (props) => {
             <h1 className="text-5xl p-1 items-center">Login</h1>
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col items-center "
+                className="flex flex-col items-center"
             >
-                <div className=" mt-2">
+                <div className="mt-2">
                     <p className="session-labels">E-Mail</p>
                     <input
                         className="session-inputs"
