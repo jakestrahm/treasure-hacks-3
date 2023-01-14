@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const SignUp = props => {
     const [state, setState] = useState({
-        name: '',
         email: '',
         phone: '',
-        smsEnabled: false,
+        emailEnabled: false,
         smsEnabled: false,
         password: '',
         confirmPassword: ''
@@ -28,22 +27,17 @@ const SignUp = props => {
             <h1 className="text-5xl p-1 items-center">Sign Up</h1>
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col items-center "
+                className="flex flex-col items-center"
             >
-                <p className="session-labels">Name</p>
-                <input
-                    class="session-inputs"
-                    type="text"
-                    value={state.name}
-                    onChange={update("name")}
-                />
-                <p className="session-labels">E-Mail</p>
-                <input
-                    className="session-inputs"
-                    type="text"
-                    value={state.email}
-                    onChange={update("email")}
-                />
+                <div className=" mt-2">
+                    <p className="session-labels">E-Mail</p>
+                    <input
+                        className="session-inputs"
+                        type="text"
+                        value={state.email}
+                        onChange={update("email")}
+                        />
+                
                 {/* https://yarnpkg.com/package/react-phone-number-input use to import PhoneInput*/}
                 <p className="session-labels">Phone</p>
                 <input
@@ -52,20 +46,6 @@ const SignUp = props => {
                     value={state.phone}
                     onChange={update("phone")}
                 />
-                {/* <div>
-                    <label>Mobile Text Enabled</label>
-                    <input
-                        type="checkbox"
-                        value={state.smsEnabled}
-                        placeholder="SMS Enabled"
-                    />
-                    <label>E-Mail Enabled</label>
-                    <input
-                        type="checkbox"
-                        value={state.emailEnabled}
-                        placeholder="Email Enabled"
-                    />
-                </div> */}
                 <p className="session-labels">Password</p>
                 <input
                     className="session-inputs"
@@ -81,9 +61,10 @@ const SignUp = props => {
                     onChange={update("confirmPassword")}
                 />
                 <br />
-                <button className="btn w-64 rounded-full" type="submit">
+                <button className="btn w-64 rounded-full mt-2" type="submit">
                     Sign Up
                 </button>
+                </div>
             </form>
         </div>
     );

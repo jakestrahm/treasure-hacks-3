@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+// import './App.css'
 import SignUp from './components/SignUp/SignUp'
 import Item from './components/Item'
 

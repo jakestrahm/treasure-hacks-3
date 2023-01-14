@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
 
-.session-inputs {
-  @apply input input-bordered w-full max-w-xs m-3;
-}
 .session-labels {
-  @apply text-sm text-gray-400 content-start ;
+  @apply text-sm text-gray-400 content-start mb-1 ml-1 mt-4;
+}
+.session-inputs {
+  @apply input input-bordered w-full max-w-xs mb-4;
 }
 
 @tailwind utilities;
