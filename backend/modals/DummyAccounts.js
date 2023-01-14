@@ -45,3 +45,5 @@ let DummyAccounts = [
     updatedAt: 261231616191234,
   },
 ];
+
+module.exports = { DummyAccounts };
