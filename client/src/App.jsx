@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 // import './App.css'
 import SignUp from './components/SignUp/SignUp'
 import Item from './components/Item'
+import Login from './components/Login/Login'
 
 const SAMPLE_ITEMS = [
     {
@@ -181,6 +182,7 @@ function App() {
         <>
             {/* <Item item={ITEM} /> */}
             <SignUp />
+            {/* <Login /> */}
         </>
     )
 }
