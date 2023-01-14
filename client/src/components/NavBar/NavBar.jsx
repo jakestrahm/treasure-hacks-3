@@ -9,7 +9,7 @@ const NavBar = () => {
     // if (!props.currentUser) {
         return (
           <div>
-            <SignedInNav />
+            <SignedOutNav />
           </div>
         );
     // } else {
