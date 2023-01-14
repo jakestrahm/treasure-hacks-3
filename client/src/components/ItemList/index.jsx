@@ -3,10 +3,9 @@ const ItemList = ({ items }) => {
 
     return (
         <div>
-            <ul>
+            <ul className="pr-0">
                 {items.map(item =>
-                    <Item item={item} />
-
+                    <Item key={item.id} item={item} />
                 )}
             </ul>
 

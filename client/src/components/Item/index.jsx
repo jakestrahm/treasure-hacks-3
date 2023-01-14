@@ -4,7 +4,6 @@ import { changeName, selectItem } from '../../features/item/itemSlice'
 import Countdown from '../Countdown'
 
 const Item = ({ item }) => {
-    console.log(item)
     // const item = useSelector(selectItem)
     // const dispatch = useDispatch()
 
@@ -39,13 +38,14 @@ const Item = ({ item }) => {
 
     //... when it's too long, max preview count?
     return (
-        <div className="pb-1 pl-1">
+        <div className="pb-1 pl-1 mr-4">
             {
                 editing === false ?
                     <button
                         onClick={handleClick}
-                        className="btn w-full max-w-xs bg-[#ffffff] text-[#2d2d2d]
-                hover:bg-[#ffffff] normal-case">
+                        className="btn w-full bg-[#ffffff] text-[#2d2d2d]
+                hover:bg-[#ffffff] normal-case
+                max-w-md">
                         <div>
                             <div><Countdown time={item.dueDate} /></div>
                             <div>{item.name}</div>
@@ -56,9 +56,10 @@ const Item = ({ item }) => {
                         autoFocus
                         type="text"
                         placeholder={item.name}
-                        className="btn w-full max-w-xs bg-[#ffffff] text-[#2d2d2d]
+                        className="btn w-full  bg-[#ffffff] text-[#2d2d2d]
                 hover:bg-[#ffffff] normal-case
                 border-transparent focus:border-transparent focus:ring-0
+                max-w-md
                 "
                         onBlur={handleFocusLoss}
                         defaultValue={item.name}

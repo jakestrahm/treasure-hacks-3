@@ -160,8 +160,8 @@ import ItemList from '../components/ItemList'
 import Details from '../components/Details'
 export default function MainPage() {
     return (
-        <div>
-            <div className='grid grid-cols-2'>
+        <div className='m-auto'>
+            <div className='grid grid-cols-2 gap-0'>
                 <div className='grid'>
                     <ItemList items={SAMPLE_ITEMS} />
                 </div>
