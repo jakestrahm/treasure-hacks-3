@@ -1,8 +1,8 @@
-const express = require("express");
-const { newLogger } = require("./utils");
+import express from "express";
+import { newLogger } from "./utils.js";
 const app = express();
 const logger = newLogger();
-const accountRoutes = require("./routes/account");
+import accountRoutes from "./routes/account.mjs";
 app.use("/api/account", accountRoutes);
 
 app.listen(3001, () => {

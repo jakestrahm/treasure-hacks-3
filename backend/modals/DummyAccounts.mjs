@@ -46,4 +46,4 @@ let DummyAccounts = [
   },
 ];
 
-module.exports = { DummyAccounts };
+export default DummyAccounts;

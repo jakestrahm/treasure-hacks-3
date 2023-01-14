@@ -1,4 +1,4 @@
-const { DummyAccounts } = require("../modals/DummyAccounts");
+import DummyAccounts from "../modals/DummyAccounts.mjs";
 
 const getAccountID = (id) => {
   let account;
@@ -13,7 +13,4 @@ const getAccounts = () => {
   return DummyAccounts;
 };
 
-module.exports = {
-  getAccountID,
-  getAccounts,
-};
+export { getAccountID, getAccounts };
