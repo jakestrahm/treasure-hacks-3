@@ -1,5 +1,3 @@
-import Item from './components/Item'
-
 const SAMPLE_ITEMS = [
     {
         userId: 0,
@@ -157,27 +155,4 @@ const SAMPLE_ITEMS = [
         dueDate: Date.now() + 11000
     },
 ]
-const ITEM = {
-    userId: 10,
-    id: "uid11",
-    importance: 11,
-    name: "item 11",
-    complete: false,
-    categories: [
-        "first cat",
-        "second cat"
-    ],
-    description: "descrip 11",
-    dueDate: Date.now() + 11000
-}
 
-
-function App() {
-    return (
-        <>
-            <Item item={ITEM} />
-        </>
-    )
-}
-
-export default App
