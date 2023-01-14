@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "hackathon for treasure-hacks",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "devStart": "nodemon server.js",
+    "devStart": "nodemon server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
