@@ -50,4 +50,38 @@ app.patch('/api/categories/:id',(req,res) =>{
 
 app.delete('api/categories/:id',(req,res) =>{
   res.send({response : 'deleted id'});
-})
+});
+
+
+app.get('/api/item/:id',(req,res) =>{
+  res.send('hello')
+});
+
+app.get('/api/items',(req,res) =>{
+  res.send(
+    [
+      {
+        id : '123213',
+        name : 'Math HW',
+        complete : false
+      },
+      {
+        id : '51515',
+        name : 'English HW',
+        complete : true
+      }
+    ]
+  );
+});
+
+app.post('/api/item/:id',(req,res) =>{
+  res.send({response : `item ${req.params.id} was posted`});
+});
+
+app.patch('/api/item/:id',(req,res) =>{
+  res.send({response : `item ${req.params.id} was updated`});
+});
+
+app.delete('/api/item/:id', (req,res) =>{
+  res.send({message : 'item was deleted'});
+});
