@@ -5,16 +5,17 @@ import './index.css'
 import store from './app/store'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom"
-import Login from './pages/login'
 import ErrorPage from './pages/error-page'
+import MainPage from './pages/main-page'
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Login />,
+        element: <MainPage />,
         errorElement: <ErrorPage />,
     },
     // {
+    // example
     //     path: "users/:userId",
     //     element: <Users />
     // }
