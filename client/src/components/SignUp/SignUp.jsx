@@ -68,6 +68,12 @@ const SignUp = (props) => {
                     >
                         Sign Up
                     </button>
+                    <p className="text-xs text-gray-400 content-end mt-3 flex justify-end item-center pr-1">
+                        Already on ReminderPal? &nbsp;
+                        <a className="text-xs text-gray-400 content-start underline">
+                            Login
+                        </a>
+                    </p>
                 </div>
             </form>
         </div>
