@@ -1,12 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-// import './App.css'
-import SignUp from './components/SignUp/SignUp'
-import Item from './components/Item'
-import Login from './components/Login/Login'
-import ItemList from './components/ItemList'
-
-import NavBar from './components/NavBar/NavBar'
 const SAMPLE_ITEMS = [
     {
         userId: 0,
@@ -164,30 +155,20 @@ const SAMPLE_ITEMS = [
         dueDate: Date.now() + 11000
     },
 ]
-const ITEM = {
-    userId: 10,
-    id: "uid11",
-    importance: 11,
-    name: "item 11",
-    complete: false,
-    categories: [
-        "first cat",
-        "second cat"
-    ],
-    description: "descrip 11",
-    dueDate: Date.now() + 11000
-}
 
-
-function App() {
+import ItemList from '../components/ItemList'
+import Details from '../components/Details'
+export default function MainPage() {
     return (
-        <>
-            <NavBar />
-            <Item />
-            <SignUp />
-            {/* <Login /> */}
-        </>
+        <div className='m-auto'>
+            <div className='grid grid-cols-2 gap-0'>
+                <div className='grid'>
+                    <ItemList items={SAMPLE_ITEMS} />
+                </div>
+                <div className='grid'>
+                    <Details item={SAMPLE_ITEMS[0]} />
+                </div>
+            </div>
+        </div>
     )
 }
-
-export default App
