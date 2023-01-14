@@ -6,6 +6,7 @@ const ItemModel = mongoose.model('items', new Schema({
     userId: SchemaTypes.String,
     name: SchemaTypes.String,
     completed: SchemaTypes.Boolean, 
+    categories: [SchemaTypes.String],
     description: {
         type: SchemaTypes.String,
         required: false,
