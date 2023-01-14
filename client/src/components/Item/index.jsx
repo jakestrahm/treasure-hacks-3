@@ -43,11 +43,11 @@ const Item = ({ item }) => {
                 editing === false ?
                     <button
                         onClick={handleClick}
-                        className="btn w-full bg-[#ffffff] text-[#2d2d2d]
+                        className="btn bg-[#ffffff] text-[#2d2d2d]
                 hover:bg-[#ffffff] normal-case
-                max-w-md">
+                ">
                         <div>
-                            <div><Countdown time={item.dueDate} /></div>
+                            <div><Countdown time={item.dueBy} /></div>
                             <div>{item.name}</div>
                         </div>
                     </button>
@@ -56,10 +56,9 @@ const Item = ({ item }) => {
                         autoFocus
                         type="text"
                         placeholder={item.name}
-                        className="btn w-full  bg-[#ffffff] text-[#2d2d2d]
+                        className="btn bg-[#ffffff] text-[#2d2d2d]
                 hover:bg-[#ffffff] normal-case
                 border-transparent focus:border-transparent focus:ring-0
-                max-w-md
                 "
                         onBlur={handleFocusLoss}
                         defaultValue={item.name}
