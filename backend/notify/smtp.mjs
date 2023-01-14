@@ -1,0 +1,9 @@
+class SMPTClient {
+    constructor() {
+
+    }
+
+    sendMessage() {
+
+    }
+}
