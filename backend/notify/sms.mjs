@@ -5,7 +5,7 @@ class SMSClient {
     }
 
     async sendMessage(message, recipient) {
-        return await client.messages
+        return await this.client.messages
         .create({
             body: message,
             from: this.phoneNumber,
@@ -13,3 +13,5 @@ class SMSClient {
         })
     }
 }
+
+export default SMSClient
