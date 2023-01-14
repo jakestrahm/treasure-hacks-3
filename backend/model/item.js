@@ -3,7 +3,7 @@ const { Schema, SchemaTypes} = mongoose;
 
 const itemSchema = new Schema({
     id: SchemaTypes.String,
-    userId: SchemaTypes.String,
+    accountId: SchemaTypes.String,
     name: SchemaTypes.String,
     completed: SchemaTypes.Boolean, 
     categories: [SchemaTypes.String],

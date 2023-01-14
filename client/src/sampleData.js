@@ -10,7 +10,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 1",
-        dueDate: Date.now() + 1000
+        dueBy: Date.now() + 1000
     },
 
     {
@@ -24,7 +24,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 2",
-        dueDate: Date.now() + 2000
+        dueBy: Date.now() + 2000
     },
 
     {
@@ -38,7 +38,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 3",
-        dueDate: Date.now() + 3000
+        dueBy: Date.now() + 3000
     },
 
     {
@@ -52,7 +52,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 4",
-        dueDate: Date.now() + 4000
+        dueBy: Date.now() + 4000
     },
 
     {
@@ -66,7 +66,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 5",
-        dueDate: Date.now() + 5000
+        dueBy: Date.now() + 5000
     },
 
 
@@ -81,7 +81,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 6",
-        dueDate: Date.now() + 6000
+        dueBy: Date.now() + 6000
     },
 
     {
@@ -95,7 +95,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 7",
-        dueDate: Date.now() + 7000
+        dueBy: Date.now() + 7000
     },
 
     {
@@ -109,7 +109,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 8",
-        dueDate: Date.now() + 8000
+        dueBy: Date.now() + 8000
     },
 
     {
@@ -123,7 +123,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 9",
-        dueDate: Date.now() + 9000
+        dueBy: Date.now() + 9000
     },
 
     {
@@ -137,7 +137,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 10",
-        dueDate: Date.now() + 10000
+        dueBy: Date.now() + 10000
     },
 
 
@@ -152,7 +152,7 @@ const SAMPLE_ITEMS = [
             "second cat"
         ],
         description: "descrip 11",
-        dueDate: Date.now() + 11000
+        dueBy: Date.now() + 11000
     },
 ]
 
