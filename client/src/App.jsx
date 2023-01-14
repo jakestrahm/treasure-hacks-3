@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import SignUp from './components/SignUp/SignUp'
 import Item from './components/Item'
 import Login from './components/Login/Login'
-
+import NavBar from './components/NavBar/NavBar'
 const SAMPLE_ITEMS = [
     {
         userId: 0,
@@ -180,6 +180,7 @@ const ITEM = {
 function App() {
     return (
         <>
+            <NavBar />
             <Item />
             <SignUp />
             {/* <Login /> */}
