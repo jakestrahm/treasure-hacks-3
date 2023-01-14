@@ -56,14 +56,14 @@ const SignUp = (props) => {
                     />
                     <p className="session-labels">Confirm Password</p>
                     <input
-                        className="session-inputs"
+                        className="session-inputs mb-0"
                         type="password"
                         value={state.confirmPassword}
                         onChange={update("confirmPassword")}
                     />
                     <br />
                     <button
-                        className="btn w-64 rounded-full mt-2"
+                        className="btn w-64 rounded-full "
                         type="submit"
                     >
                         Sign Up
