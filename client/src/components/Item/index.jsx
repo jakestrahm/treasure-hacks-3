@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import { changeName, selectItem } from '../../features/item/itemSlice'
+import { changeFocus, selectItem } from '../../features/item/itemSlice'
 import Countdown from '../Countdown'
 
 const Item = ({ item }) => {
