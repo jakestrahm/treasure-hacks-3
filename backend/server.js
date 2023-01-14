@@ -9,24 +9,14 @@ app.get('/',(req,res)=>{
 });
 
 app.post('/api/auth/tokens',(req,res) =>{
-  res.send({token : 'J12KL3H1F'})
+  res.send({token : 'J12KL3H1F'});
 });
 app.post('/api/auth/revoke',(req,res) =>{
   res.send({response : 'revoked!'});
 });
 
-app.get('/api/account/:id',(req,res) =>{
+app.get('/api/account/',(req,res) =>{
   res.send({id : 999});
-});
-
-app.get('/api/accounts', (req,res) =>{
-  res.send({
-      accounts : [
-        {id : 123213},
-        {id : 21313}
-      ]
-    }
-  );
 });
 
 app.patch('/api/account',(req,res) =>{
@@ -37,11 +27,11 @@ app.post('/api/account',(req,res) =>{
   res.send({response: 'account was made!'});
 });
 
-app.get('/api/categories/:id',(req,res) =>{
+app.get('/api/category/:id',(req,res) =>{
   res.send({id: 999});
 });
 
-app.get('/api/categories', (req,res) =>{
+app.get('/api/category', (req,res) =>{
   res.send({
       categories : [
         {name : 'school'},
@@ -51,20 +41,20 @@ app.get('/api/categories', (req,res) =>{
   );
 });
 
-app.patch('/api/categories/:id',(req,res) =>{
+app.patch('/api/category/:id',(req,res) =>{
   res.send({response : 'category was updated'});
 });
 
-app.delete('api/categories/:id',(req,res) =>{
+app.delete('api/category/:id',(req,res) =>{
   res.send({response : 'deleted id'});
 });
 
 
 app.get('/api/item/:id',(req,res) =>{
-  res.send('hello')
+  res.send(`sending item ${req.params.id} to client`);
 });
 
-app.get('/api/items',(req,res) =>{
+app.get('/api/item',(req,res) =>{
   res.send(
     [
       {
