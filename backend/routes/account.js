@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAccountID, getAccounts } = require("../views/userView");
+const {
+  getAllAccounts,
+  getAccountByID,
+} = require("../controllers/userController");
 
-router.get("/api/account", getAccounts);
+router.get("/", getAccounts);
 router.get("/api/account/:id", getAccountID);
 
 module.exports = router;
