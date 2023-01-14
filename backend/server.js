@@ -2,6 +2,8 @@ const express = require("express");
 const { newLogger } = require("./utils");
 const app = express();
 const logger = newLogger();
+const accountRoutes = require("./routes/account");
+app.use("/api/account", accountRoutes);
 
 app.listen(3001, () => {
   logger.info("running on port 3001");
@@ -18,17 +20,17 @@ app.post("/api/auth/revoke", (req, res) => {
   res.send({ response: "revoked!" });
 });
 
-app.get("/api/account/", (req, res) => {
-  res.send({ id: 999 });
-});
+// app.get("/api/account/", (req, res) => {
+//   res.send({ id: 999 });
+// });
 
-app.patch("/api/account", (req, res) => {
-  res.send({ account: "updated info!" });
-});
+// app.patch("/api/account", (req, res) => {
+//   res.send({ account: "updated info!" });
+// });
 
-app.post("/api/account", (req, res) => {
-  res.send({ response: "account was made!" });
-});
+// app.post("/api/account", (req, res) => {
+//   res.send({ response: "account was made!" });
+// });
 
 app.get("/api/category/:id", (req, res) => {
   res.send({ id: 999 });
