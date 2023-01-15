@@ -40,7 +40,9 @@ const SignedInNav = () => {
                             </Link>
                         </li>
                         <li>
-                            <a onClick={handleLogout()}>Logout</a>
+                            <Link to="/login">
+                                Login
+                            </Link>
                         </li>
                     </ul>
                 </div>

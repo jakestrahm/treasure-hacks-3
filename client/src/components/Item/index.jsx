@@ -7,7 +7,6 @@ const Item = ({ item, time }) => {
   // const item = useSelector(selectItem)
   // const dispatch = useDispatch()
   const [editing, setEditing] = useState(false);
-
   const handleClick = (event) => {
     console.log(event.detail);
     switch (event.detail) {
@@ -39,11 +38,10 @@ const Item = ({ item, time }) => {
     <div className="">
       {editing === false ? (
         <button
-          onClick={handleClick}
           className="btn  text-[#dbdbdb]
                 hover:bg-[#ffffff] normal-case w-full h-24 m-1
                 "
-        > 
+        >
           <div>
             <div>
               <Countdown date={time} />
