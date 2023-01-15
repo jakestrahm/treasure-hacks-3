@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import Axios from "axios";
 const Login = (props) => {
     const [state, setState] = useState({
         email: "",
@@ -14,6 +14,13 @@ const Login = (props) => {
             });
     };
     const handleSubmit = (e) => {
+        Axios.get('https://treasure-hacks-server-production.up.railway.app/account')
+        .then((res) =>{
+            console.log(res);
+        })
+        .catch((err) =>{
+            console.log(err);
+        })
     };
     return (
         <div className="h-screen flex flex-col justify-center items-center content-center">
