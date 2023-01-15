@@ -3,10 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeFocus, selectItem } from "../../features/item/itemSlice";
 import Countdown from "../Countdown";
 
-const Item = ({ item }) => {
+const Item = ({ item, time }) => {
   // const item = useSelector(selectItem)
   // const dispatch = useDispatch()
-
   const [editing, setEditing] = useState(false);
 
   const handleClick = (event) => {
@@ -47,7 +46,7 @@ const Item = ({ item }) => {
         >
           <div className="text-3xl">
             <div>
-              <Countdown time={item.dueBy} />
+              <Countdown date={time} />
             </div>
             <div>{item.name}</div>
           </div>

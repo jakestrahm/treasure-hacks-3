@@ -239,13 +239,12 @@ export default function MainPage() {
     setTimeList((prevTime) => {
       return [...prevTime, dateTime];
     });
-    console.log(timeList);
   };
   return (
     <div className="p-20">
       <div className="grid grid-cols-2 gap-4">
         <div className="grid">
-          <ItemList items={SAMPLE_ITEMS} />
+          <ItemList items={SAMPLE_ITEMS} timeList={timeList} />
         </div>
         <div className="grid item">
           <Details item={SAMPLE_ITEMS[0]} time={timeHandler} />
