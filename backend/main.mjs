@@ -1,5 +1,14 @@
 import dotenv from "dotenv";
 import yargs from "yargs"; 
+import mongoose from "mongoose"; 
+
+import { authRouter, accountRouter, itemRouter, categoryRouter } from "./routers.mjs"; 
+import Server from "./server.mjs";
+
+import AuthController from "./controllers/auth.mjs";
+import AccountController from "./controllers/account.mjs";
+import ItemController from "./controllers/item.mjs";
+import CategoryController from "./controllers/category.mjs";
 
 function getConfig() {
     return {
@@ -22,6 +31,7 @@ function getConfig() {
     }
 }
 
+
 function main() {
     const args = yargs(process.argv).argv;
     const environ = args.environ; 
@@ -31,6 +41,18 @@ function main() {
     }
 
     const config = getConfig();     
+
+    // connecting to db
+
+    // building server
+    const server = new Server(
+      authRouter(new AuthController()),
+      accountRouter(new AccountController()),
+      itemRouter(new ItemController()),
+      categoryRouter(new CategoryController())
+    );
+
+    server.run(config.app.port);
 }
 
 
