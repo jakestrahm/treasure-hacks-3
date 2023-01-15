@@ -1,3 +1,5 @@
+import AccountModel from "../model/account.mjs"; 
+
 class AccountController {
   getAccount(req, res) {
     res.send({});
@@ -8,6 +10,7 @@ class AccountController {
   }
 
   createAccount(req, res) {
+    console.log(req.body); 
     res.send({});
   }
 }
