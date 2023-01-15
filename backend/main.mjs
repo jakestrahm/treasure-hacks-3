@@ -47,7 +47,7 @@ async function main() {
 
     try {
         // database
-        await mongoose.connect('mongodb://127.0.0.1:27017/treasure-hacks-3')
+        await mongoose.connect(config.mongo.url);
         LOGGER.info("successfully connected to mongodb");
 
         // server
