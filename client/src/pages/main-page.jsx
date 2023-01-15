@@ -230,6 +230,10 @@ export default function MainPage() {
   // const dispatch = useDispatch()
 
   //TODO get call for id that is focusedId in redux store
+
+  const timeHandler = (time) => {
+    console.log(time);
+  };
   return (
     <div className="p-20">
       <div className="grid grid-cols-2 gap-4">
@@ -237,7 +241,7 @@ export default function MainPage() {
           <ItemList items={SAMPLE_ITEMS} />
         </div>
         <div className="grid item">
-          <Details item={SAMPLE_ITEMS[0]} />
+          <Details item={SAMPLE_ITEMS[0]} time={timeHandler} />
         </div>
       </div>
     </div>
