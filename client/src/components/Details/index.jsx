@@ -4,12 +4,13 @@
 categories: ["test1", "test2"],
 */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Axios from "axios";
 import Categories from "../Categories";
 
 const Details = ({ item, time }) => {
   //TODO replace wtih redux
-
+  
   const [editingName, setEditingName] = useState(false);
   const [editingDescription, setEditingDescription] = useState(false);
   const [complete, setComplete] = useState(item.complete);

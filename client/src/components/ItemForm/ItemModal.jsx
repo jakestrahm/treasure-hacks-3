@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Axios from "axios";
 export default function ItemModal() {
   const [item, setItem] = useState({
     userId: 1,
@@ -51,7 +51,7 @@ export default function ItemModal() {
           </label>
           <h3 className="text-lg font-bold">Create a New Item</h3>
           <form className="py-4">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-4">
               <input
                 type="text"
                 placeholder="Name"
@@ -64,24 +64,7 @@ export default function ItemModal() {
                 className="input input-bordered"
                 //   onChange={"description"}
               />
-              {/* create an array of strings of id's  */}
-              <select className="select w-full max-w-xs">
-                <option disabled selected>
-                  categories
-                </option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-              </select>
-              <input
-                type="text"
-                placeholder=""
-                className="input input-bordered"
-                //   onChange={""}
-              />
-              <button className="btn btn-primary mt-4">Create</button>
+              <button className="btn btn mt-4">Create</button>
             </div>
           </form>
         </div>
