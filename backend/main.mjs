@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import yargs from "yargs";
 
 function getConfig() {
     return {
@@ -22,7 +23,8 @@ function getConfig() {
 }
 
 function main() {
-    const environ = ""; 
+    const args = yargs.argv;
+    const environ = args.environ; 
 
     if(environ === "dev") {
         dotenv.config();
