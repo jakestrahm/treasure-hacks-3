@@ -10,4 +10,6 @@ class AuthController {
   revokeToken(req, res) {
      res.send({});  
   }
-}export default AuthController;
+}
+
+export default AuthController;

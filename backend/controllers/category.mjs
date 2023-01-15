@@ -1,8 +1,4 @@
 class CategoryController {
-  constructor() {
-    
-  }
-
   getCategory() {
     res.send({});
   }

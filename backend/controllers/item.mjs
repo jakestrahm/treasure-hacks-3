@@ -1,8 +1,4 @@
 class ItemController {
-  constructor() {
-
-  }
-
   getItem(req, res) {
     res.send({});
   }
