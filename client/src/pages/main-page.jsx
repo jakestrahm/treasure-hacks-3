@@ -224,15 +224,22 @@ import ItemList from "../components/ItemList";
 import Details from "../components/Details";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFocus, selectItem } from "../features/item/itemSlice";
+import { useState } from "react";
 
 export default function MainPage() {
   const item = useSelector(selectItem);
+  const [timeList, setTimeList] = useState([]);
   // const dispatch = useDispatch()
 
   //TODO get call for id that is focusedId in redux store
 
   const timeHandler = (time) => {
-    console.log(time);
+    let dateTime = new Date(time);
+    console.log(dateTime);
+    setTimeList((prevTime) => {
+      return [...prevTime, dateTime];
+    });
+    console.log(timeList);
   };
   return (
     <div className="p-20">
