@@ -1,21 +1,21 @@
 class ItemController {
-  getItem(req, res) {
+  async getItem(req, res) {
     res.send({});
   }
 
-  getItems(req, res) {
+  async getItems(req, res) {
     res.send({});
   }
 
-  createItem(req, res) {
+  async createItem(req, res) {
     res.send({});
   }
 
-  updateItem(req, res) {
+  async updateItem(req, res) {
     res.send({});
   }
 
-  deleteItem(req, res) {
+  async deleteItem(req, res) {
     res.send({});
   }
 }
