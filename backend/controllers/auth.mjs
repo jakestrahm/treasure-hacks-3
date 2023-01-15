@@ -3,11 +3,11 @@ class AuthController {
 
   }
 
-  createAuthTokens(req, res) {
+  createTokens(req, res) {
     res.send({});
   }
 
-  revokeAuthToken(req, res) {
+  revokeToken(req, res) {
      res.send({});  
   }
 }export default AuthController;
