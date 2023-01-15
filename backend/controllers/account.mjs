@@ -1,8 +1,4 @@
 class AccountController {
-  constructor() {
-
-  }
-
   getAccount(req, res) {
     res.send({});
   }

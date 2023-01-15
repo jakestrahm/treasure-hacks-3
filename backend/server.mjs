@@ -1,5 +1,4 @@
 import express from "express";
-import { newLogger } from "./utils.mjs";
 
 class Server {
   constructor(authRouter, accountRouter, itemRouter, categoryRouter) {
@@ -9,16 +8,10 @@ class Server {
     this.app.use("/api/account", accountRouter);
     this.app.use("/api/item", itemRouter);
     this.app.use("/api/category", categoryRouter);
-
-    //logger
-    this.LOGGER = newLogger();
   }
 
-
   run(port) {
-    this.app.listen(port, () => {
-      this.LOGGER.info(`server running on running on port ${port}`); 
-    });
+    this.app.listen(port);
   }
 }
 

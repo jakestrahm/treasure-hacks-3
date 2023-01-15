@@ -1,8 +1,7 @@
 import { Router } from "express";
-import router from "./routers/account.mjs";
 
 const accountRouter = (accountController) => {
-    router = Router();
+    const router = Router();
     router.get("/", accountController.getAccount);
     router.patch("/", accountController.updateAccount);
     router.post("/", accountController.createAccount);
@@ -10,14 +9,14 @@ const accountRouter = (accountController) => {
 }
 
 const authRouter = (authController) => {    
-    router = Router();
+    const router = Router();
     router.post("/tokens", authController.createTokens);
     router.post("/revoke", authController.revokeToken);
     return router;
 }
 
 const itemRouter = (itemController) => {
-    router = Router();
+    const router = Router();
     router.get("/:id", itemController.getItem);
     router.get("/", itemController.getItems);
     router.post("/", itemController.createItem);
@@ -27,7 +26,7 @@ const itemRouter = (itemController) => {
 }
 
 const categoryRouter = (categoryController) => {
-    router = Router();
+    const router = Router();
     router.get("/", categoryController.getCategories);
     router.get("/:id", categoryController.getCategory);
     router.post("/", categoryController.createCategory);
