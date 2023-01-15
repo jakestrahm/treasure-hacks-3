@@ -43,7 +43,6 @@ class AccountController {
   }
 
   async createAccount(req, res) {
-    console.log(req.ety)
     const { error } = AccountCreateSchema.validate(req.body);
 
     if(error !== undefined) {
