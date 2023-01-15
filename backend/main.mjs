@@ -62,7 +62,7 @@ async function main() {
         LOGGER.info(`server running on port ${config.app.port}`);
 
     } catch(err) {
-        LOGGER.error(error);
+        LOGGER.error(err);
     }
 }
 

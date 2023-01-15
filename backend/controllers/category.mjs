@@ -1,21 +1,21 @@
 class CategoryController {
-  getCategory(req, res) {
+  async getCategory(req, res) {
     res.send({});
   }
 
-  getCategories(req, res) {
+  async getCategories(req, res) {
     res.send({});
   }
 
-  createCategory(req, res) {
+  async createCategory(req, res) {
     res.send({});
   }
 
-  updateCategory(req, res) {
+  async updateCategory(req, res) {
     res.send({});
   }
 
-  deleteCategory(req, res) {
+  async deleteCategory(req, res) {
     res.send({});
   }
 }

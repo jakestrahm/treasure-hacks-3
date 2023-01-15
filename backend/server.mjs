@@ -3,7 +3,9 @@ import express from "express";
 class Server {
   constructor(authRouter, accountRouter, itemRouter, categoryRouter) {
     //route config
-    this.app = express()
+    this.app = express();
+    this.app.use(express.json());
+
     this.app.use("/api/auth", authRouter);
     this.app.use("/api/account", accountRouter);
     this.app.use("/api/item", itemRouter);

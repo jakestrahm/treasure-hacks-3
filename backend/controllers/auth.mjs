@@ -3,11 +3,11 @@ class AuthController {
 
   }
 
-  createTokens(req, res) {
+  async createTokens(req, res) {
     res.send({});
   }
 
-  revokeToken(req, res) {
+  async revokeToken(req, res) {
      res.send({});  
   }
 }
