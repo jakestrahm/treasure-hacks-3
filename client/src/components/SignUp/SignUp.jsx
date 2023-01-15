@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const SignUp = (props) => {
     const [state, setState] = useState({
         email: "",
@@ -56,32 +56,28 @@ const SignUp = (props) => {
                     />
                     <p className="session-labels">Confirm Password</p>
                     <input
-                        className="session-inputs"
+                        className="session-inputs mb-1"
                         type="password"
                         value={state.confirmPassword}
                         onChange={update("confirmPassword")}
                     />
                     <br />
                     <button
-                        className="btn w-64 rounded-full mt-2"
+                        className="btn w-64 rounded-full"
                         type="submit"
                     >
                         Sign Up
                     </button>
+                    <div className="flex flex-row justify-end mt-6 mr-3">
+                        <p className="text-xs ">Already on ReminderPal?</p>
+                        <Link to="/login" className="text-xs ml-1 underline">
+                            Login
+                        </Link>
+                    </div>
                 </div>
             </form>
         </div>
     );
 };
-
-const mapStateToProps = (state) => ({
-    //session
-    //errors
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    //signup
-    //login
-});
 
 export default SignUp;

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 const Login = (props) => {
     const [state, setState] = useState({
         email: "",
@@ -44,6 +46,12 @@ const Login = (props) => {
                     >
                         Login
                     </button>
+                    <div className="flex flex-row justify-end mt-3 mr-3">
+                        <p className="text-xs ">Don't have an account?</p>
+                        <Link to="/signup" className="text-xs ml-1 underline">
+                            Sign Up
+                        </Link>
+                    </div>
                 </div>
             </form>
         </div>

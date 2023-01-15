@@ -7,6 +7,9 @@ import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom"
 import ErrorPage from './pages/error-page'
 import MainPage from './pages/main-page'
+import SignUp from './components/SignUp/SignUp'
+import Login from './components/Login/Login'
+import Settings from './components/Settings/Settings'
 
 const router = createBrowserRouter([
     {
@@ -14,16 +17,25 @@ const router = createBrowserRouter([
         element: <MainPage />,
         errorElement: <ErrorPage />,
     },
-    // {
-    // example
-    //     path: "users/:userId",
-    //     element: <Users />
-    // }
+    {
+        path: "/SignUp",
+        element: <SignUp />
+    },
+    {
+        path: "/Login",
+        element: <Login />
+    },
+    {
+        path: "/Setting",
+        element: <Settings />
+    }
+
+
 ]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
     </Provider>
 )
