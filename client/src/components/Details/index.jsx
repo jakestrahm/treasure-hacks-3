@@ -69,65 +69,68 @@ const Details = ({ item, time }) => {
   };
 
   return (
-    <div className=" flex justify-center p-4 rounded border border-solid border-white">
-      <div>
-        <div className="">
+    <div className="bg-slate-400 flex justify-center p-10 rounded border border-solid">
+      <div className="space-y-10">
+        <div>
           {editingName === false ? (
-            <button onClick={handleNameClick} className="text-4xl">
-              {item.name}
-            </button>
+            <div className="flex justify-center">
+              <button onClick={handleNameClick} className="text-4xl">
+                {item.name}
+              </button>
+            </div>
           ) : (
-            <input
-              autoFocus
-              type="text"
-              placeholder={item.name}
-              className=""
-              onBlur={handleFocusLoss}
-              defaultValue={item.name}
-            />
+            <div className="flex justify-center">
+              <input
+                autoFocus
+                type="text"
+                placeholder={item.name}
+                className=""
+                onBlur={handleFocusLoss}
+                defaultValue={item.name}
+              />
+            </div>
           )}
         </div>
 
         {editingDescription === false ? (
-          <button onClick={handleDescriptionClick} className="">
-            {item.description}
-          </button>
+          <div className="bg-white rounded text-xl">
+            <button onClick={handleDescriptionClick} className="">
+              {item.description}
+            </button>
+          </div>
         ) : (
           <input
             autoFocus
             type="text"
             placeholder={item.description}
-            className=""
+            className="w-96"
             onBlur={handleFocusLoss}
             defaultValue={item.description}
           />
         )}
 
-        <Categories categories={item.categories} />
-
-        <div className="">
-          {complete === true ? (
-            <input
-              onChange={handleCheck}
-              type="checkbox"
-              checked="checked"
-              className="checkbox"
-            />
-          ) : (
-            <input
-              onChange={handleCheck}
-              type="checkbox"
-              checked=""
-              className="checkbox"
-            />
-          )}
+        <div className="flex justify-evenly">
+          <div className="text-2xl">Due Date: January 23 2023</div>
+          <input type="datetime-local" onChange={timeHandler} />
+          <div className="text-2xl flex item-center gap-1 items-center">
+            Completed:
+            {complete === true ? (
+              <input
+                onChange={handleCheck}
+                type="checkbox"
+                checked="checked"
+                className="checkbox"
+              />
+            ) : (
+              <input
+                onChange={handleCheck}
+                type="checkbox"
+                checked=""
+                className="checkbox"
+              />
+            )}
+          </div>
         </div>
-
-        <div>{item.dueBy}</div>
-        {/* TODO default value of dueBy?
-            set it here too?
-            */}
-        <input type="datetime-local" onChange={timeHandler} />
       </div>
     </div>
   );
