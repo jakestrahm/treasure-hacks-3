@@ -3,6 +3,17 @@ import { AccountCreateSchema } from "../validation.mjs";
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from "bcrypt";
 
+function accountToAPI(dbAccount) {
+  return {
+    id: dbAccount.id,
+    email: dbAccount.email,
+    phoneNumber: dbAccount.phoneNumber,
+    smsEnabled: dbAccount.smsEnabled,
+    emailEnabled: dbAccount.emailEnabled,
+    createdAt: dbAccount.createdAt,
+    updatedAt: dbAccount.updatedAt
+  }
+}
 
 class AccountController {
   async getAccount(req, res) {
@@ -18,15 +29,7 @@ class AccountController {
         return
       }
 
-      res.json({
-        id: account.id,
-        email: account.email,
-        phoneNumber: account.phoneNumber,
-        smsEnabled: account.smsEnabled,
-        emailEnabled: account.emailEnabled,
-        createdAt: account.createdAt,
-        updatedAt: account.updatedAt
-      })
+      res.json(accountToAPI(account));
       return
 
     } catch(err) {
@@ -43,7 +46,6 @@ class AccountController {
   }
 
   async createAccount(req, res) {
-    console.log(req.ety)
     const { error } = AccountCreateSchema.validate(req.body);
 
     if(error !== undefined) {

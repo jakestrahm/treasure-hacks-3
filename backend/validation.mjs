@@ -14,4 +14,17 @@ const AccountCreateSchema = joi.object({
         pattern(/^[0-9]+$/)
 })
 
-export { AccountCreateSchema } 
+const ItemCreateSchema = joi.object({
+    name: joi.string()
+        .required(),
+    
+    //categories: List[string]
+    
+    description: joi.string(),
+
+    dueBy: joi.number()
+        .integer()
+        .required(),
+})
+
+export { AccountCreateSchema, ItemCreateSchema } 
