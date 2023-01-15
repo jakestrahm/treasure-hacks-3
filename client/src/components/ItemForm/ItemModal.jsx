@@ -22,9 +22,14 @@ export default function ItemModal() {
   const updateCategories = (e) => {};
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // const newUser = Object.assign({}, state)
-    //props.login(newUser).then(() => props.history.push('/'))
+    e.preventDefault();
+    Axios.post(`https://treasure-hacks-server-production.up.railway.app/`,item)
+    .then((res) =>{
+      console.log(res);
+    })
+    .catch((err) =>{
+      console.log(err);
+    })
   };
 
   return (
@@ -64,7 +69,7 @@ export default function ItemModal() {
                 className="input input-bordered"
                 //   onChange={"description"}
               />
-              <button className="btn btn mt-4">Create</button>
+              <button className="btn mt-4">Create</button>
             </div>
           </form>
         </div>
