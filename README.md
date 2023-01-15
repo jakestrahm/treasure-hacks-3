@@ -15,9 +15,8 @@ This web application is a productivity tool that allows users to create and mana
 - ReactJS
 - TailwindCSS
 - Daisy UI
+- Axios
 # Backend
 - ExpressJS
-- MongoDB
-- Axios API 
+- MongoDB 
 - NodeMailer API
-
