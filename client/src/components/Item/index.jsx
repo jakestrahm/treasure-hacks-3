@@ -44,11 +44,11 @@ const Item = ({ item, time }) => {
                 hover:bg-[#ffffff] normal-case w-full h-24 m-1
                 "
         >
-          <div className="text-3xl">
+          <div>
             <div>
               <Countdown date={time} />
             </div>
-            <div>{item.name}</div>
+            <div className="text-lg">{item.name}</div>
           </div>
         </button>
       ) : (
