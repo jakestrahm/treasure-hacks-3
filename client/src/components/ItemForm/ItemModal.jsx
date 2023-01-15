@@ -2,11 +2,8 @@ import { useState } from "react";
 import Axios from "axios";
 export default function ItemModal() {
   const [item, setItem] = useState({
-    userId: 1,
-    id: "uid1",
     name: "item 1",
-    complete: false,
-    categoriesid: [],
+    // categoriesid: [],
     description: "",
     dueBy: Date.now() + 1000,
   });
@@ -19,11 +16,9 @@ export default function ItemModal() {
       });
   };
 
-  const updateCategories = (e) => {};
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post(`https://treasure-hacks-server-production.up.railway.app/`,item)
+    Axios.post(`https://treasure-hacks-server-production.up.railway.app/api/item`,item)
     .then((res) =>{
       console.log(res);
     })
@@ -55,7 +50,7 @@ export default function ItemModal() {
             ✕
           </label>
           <h3 className="text-lg font-bold">Create a New Item</h3>
-          <form className="py-4">
+          <form className="py-4" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-y-4">
               <input
                 type="text"

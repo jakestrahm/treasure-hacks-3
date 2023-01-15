@@ -22,7 +22,7 @@ const SignUp = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        Axios.post('https://treasure-hacks-server-production.up.railway.app/item',state)
+        Axios.post('https://treasure-hacks-server-production.up.railway.app/account',state)
             .then((res) =>{
                 console.log(res);
             })
