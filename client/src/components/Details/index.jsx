@@ -7,7 +7,7 @@ categories: ["test1", "test2"],
 import { useState } from "react";
 import Categories from "../Categories";
 
-const Details = ({ item }) => {
+const Details = ({ item, time }) => {
   //TODO replace wtih redux
 
   const [editingName, setEditingName] = useState(false);
@@ -20,7 +20,9 @@ const Details = ({ item }) => {
       setComplete(false);
     }
   };
-
+  const timeHandler = (event) => {
+    time(event.target.value);
+  };
   const handleNameClick = (event) => {
     console.log(event.detail);
     switch (event.detail) {
@@ -125,7 +127,7 @@ const Details = ({ item }) => {
         {/* TODO default value of dueBy?
             set it here too?
             */}
-        <input type="datetime-local" />
+        <input type="datetime-local" onChange={timeHandler} />
       </div>
     </div>
   );
