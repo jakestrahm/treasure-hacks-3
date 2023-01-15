@@ -40,7 +40,7 @@ const Item = ({ item, time }) => {
       {editing === false ? (
         <button
           onClick={handleClick}
-          className="btn bg-[#ffffff] text-[#2d2d2d]
+          className="btn  text-[#dbdbdb]
                 hover:bg-[#ffffff] normal-case w-full h-24 m-1
                 "
         >

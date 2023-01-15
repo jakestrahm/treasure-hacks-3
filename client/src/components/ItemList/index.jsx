@@ -4,7 +4,7 @@ const ItemList = ({ items, timeList }) => {
     <div>
       <ul>
         {items.map((item, index) => {
-          return <Item key={item.id} item={item} time={timeList[index]} />;
+          return <Item key={item.id} item={item} />;
         })}
       </ul>
     </div>

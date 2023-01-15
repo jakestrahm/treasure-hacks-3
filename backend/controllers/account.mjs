@@ -1,10 +1,15 @@
-const getAccount = (req, res) => {
-  res.send({});
-};
-const updateAccount = (req, res) => {
-  res.send({});
-};
-const createAccount = (req, res) => {
-  res.send({});
-};
-export { getAccount, updateAccount, createAccount };
+class AccountController {
+  getAccount(req, res) {
+    res.send({});
+  }
+
+  updateAccount(req, res) {
+    res.send({});
+  }
+
+  createAccount(req, res) {
+    res.send({});
+  }
+}
+
+export default AccountController;

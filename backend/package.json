@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "hackathon for treasure-hacks",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "devStart": "nodemon server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +24,8 @@
     "mongoose": "^6.8.3",
     "nodemailer": "^6.9.0",
     "twilio": "^3.84.1",
-    "winston": "^3.8.2"
+    "winston": "^3.8.2",
+    "yargs": "^17.6.2"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",

@@ -69,11 +69,11 @@ const Details = ({ item, time }) => {
   };
 
   return (
-    <div className=" flex justify-center p-4 rounded border border-solid border-black">
+    <div className=" flex justify-center p-4 rounded border border-solid border-white">
       <div>
-        <div className="bg-red-300">
+        <div className="">
           {editingName === false ? (
-            <button onClick={handleNameClick} className="">
+            <button onClick={handleNameClick} className="text-4xl">
               {item.name}
             </button>
           ) : (

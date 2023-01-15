@@ -9,22 +9,12 @@ const NavBar = () => {
     // if (!props.currentUser) {
         return (
           <div>
-            <SignedOutNav />
+            <SignedInNav />
           </div>
         );
     // } else {
         return <SignedOutNav />;
     // }
 };
-
-const mapStateToProps = (state) => ({
-    //current user
-    //session
-    //errors
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    //logout
-});
 
 export default NavBar;

@@ -1,9 +1,15 @@
-const createAuth = (req, res) => {
-  res.send({});
-};
+class AuthController {
+  constructor() {
 
-const createRevoke = (req, res) => {
-  res.send({});
-};
+  }
 
-export { createAuth, createRevoke };
+  createTokens(req, res) {
+    res.send({});
+  }
+
+  revokeToken(req, res) {
+     res.send({});  
+  }
+}
+
+export default AuthController;

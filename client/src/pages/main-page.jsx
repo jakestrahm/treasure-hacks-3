@@ -3,19 +3,20 @@ const SAMPLE_ITEMS = [
     userId: 0,
     id: "uid1",
     importance: 1,
-    name: "item 1",
+    name: "Go To The Gym",
     complete: false,
     categories: [
       {
-        name: "cat 1",
+        name: "Gym",
         id: 0,
       },
       {
-        name: "cat 2",
+        name: "Self Care",
         id: 1,
       },
     ],
-    description: "descrip 1",
+    description:
+      "Do cardio, lift weights, stretch, take a post-workout selfie, and reward yourself with a protein shake (because you deserve it after all that hard work...of standing in front of the mirror flexing).",
     dueBy: Date.now() + 1000,
   },
 
@@ -23,7 +24,7 @@ const SAMPLE_ITEMS = [
     userId: 1,
     id: "uid2",
     importance: 2,
-    name: "item 2",
+    name: "Cook Dinner",
     complete: false,
     categories: [
       {
@@ -35,7 +36,8 @@ const SAMPLE_ITEMS = [
         id: 1,
       },
     ],
-    description: "descrip 2",
+    description:
+      "Gather ingredients and make sure you have everything you need, like wine because let's be real, that's the most important ingredient. Then, preheat the oven or set a pot on the stove to boil, but not too hot or you'll end up with soup instead of a meal.",
     dueBy: Date.now() + 2000,
   },
 
@@ -225,6 +227,8 @@ import Details from "../components/Details";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFocus, selectItem } from "../features/item/itemSlice";
 import { useState } from "react";
+import NavBar from "../components/NavBar/NavBar";
+// import ItemModal from "../components/ItemForm/ItemModal";
 
 export default function MainPage() {
   const item = useSelector(selectItem);
@@ -241,13 +245,15 @@ export default function MainPage() {
     });
   };
   return (
-    <div className="p-20">
-      <div className="grid grid-cols-2 gap-4">
-        <div className="grid">
-          <ItemList items={SAMPLE_ITEMS} timeList={timeList} />
+    <div className="w-fit h-fit">
+      <NavBar />
+      <div className="flex flex-row justify-center gap-10 mt-10">
+        <div className="w-2/12">
+          {/* <ItemModal /> */}
+          <ItemList items={SAMPLE_ITEMS} />
         </div>
-        <div className="grid item">
-          <Details item={SAMPLE_ITEMS[0]} time={timeHandler} />
+        <div className="w-2/4 h- -sticky top-1000">
+          <Details item={SAMPLE_ITEMS[0]} />
         </div>
       </div>
     </div>
