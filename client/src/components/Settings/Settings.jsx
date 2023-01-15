@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Axios from 'axios';
 const Settings = () => {
     // const [editing, setEditing] = useState(false);
     const [selectedInput, setSelectedInput] = useState(null);
@@ -11,9 +11,15 @@ const Settings = () => {
         password: "",
     });
 
-    const handleSubmit = () => {
-        
-            console.log(state);
+    const handleSubmit = (e) => {
+            e.preventDefault();
+            Axios.patch('https://treasure-hacks-server-production.up.railway.app/account')
+            .then((res) =>{
+                console.log(res)
+            })
+            .catch((err) =>{
+                console.log(err);
+            })
     };
 
     const handleToggle = (field) => {

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
+import axios from "axios";
 const SignUp = (props) => {
     const [state, setState] = useState({
         email: "",
@@ -19,9 +21,14 @@ const SignUp = (props) => {
     };
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // const newUser = Object.assign({}, state)
-        //props.signup(newUser).then(() => props.history.push('/'))
+        e.preventDefault();
+        Axios.post('https://treasure-hacks-server-production.up.railway.app/account',state)
+            .then((res) =>{
+                console.log(res);
+            })
+            .catch((err) =>{
+                console.log(err);
+            })
     };
 
     return (

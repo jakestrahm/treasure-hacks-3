@@ -43,7 +43,7 @@ const Item = ({ item, time }) => {
           className="btn  text-[#dbdbdb]
                 hover:bg-[#ffffff] normal-case w-full h-24 m-1
                 "
-        >
+        > 
           <div>
             <div>
               <Countdown date={time} />
