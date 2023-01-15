@@ -20,7 +20,7 @@ const ItemCreateSchema = joi.object({
     
     //categories: List[string]
     
-    description: joi.string(),
+    description: joi.string().optional(),
 
     dueBy: joi.number()
         .integer()
