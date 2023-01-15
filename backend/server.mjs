@@ -1,9 +1,11 @@
 import express from "express";
+import cors from "cors";
 
 class Server {
   constructor(authRouter, accountRouter, itemRouter, categoryRouter) {
     //route config
     this.app = express();
+    this.app.use(cors());
     this.app.use(express.json());
 
     this.app.use("/api/auth", authRouter);
