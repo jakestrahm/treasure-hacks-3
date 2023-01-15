@@ -1,4 +1,4 @@
-const winston = require("winston");
+import winston from "winston";
 
 const newLogger = () => {
   return winston.createLogger({
@@ -7,4 +7,4 @@ const newLogger = () => {
   });
 };
 
-module.exports = { newLogger };
+export { newLogger };

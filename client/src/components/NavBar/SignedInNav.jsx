@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const SignedInNav = () => {
     const handleLogout = () => {
+        
         // props.logout().then(() => props.history.push("/"));
     };
     return (
@@ -23,7 +24,7 @@ const SignedInNav = () => {
                         >
                             <path
                                 strokeLinecap="round"
-                                strokeLineJoin="round"
+                                strokeLinejoin="round"
                                 strokeWidth="2"
                                 d="M4 6h16M4 12h16M4 18h16"
                             ></path>
@@ -34,14 +35,9 @@ const SignedInNav = () => {
                         className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-200 rounded-box w-52"
                     >
                         <li>
-                            <a as={Link} to="">
-                                Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a as={Link} to="">
+                            <Link to="/setting">
                                 Settings
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a onClick={handleLogout()}>Logout</a>
