@@ -3,7 +3,6 @@ import Axios from "axios";
 export default function ItemModal() {
   const [item, setItem] = useState({
     name: "item 1",
-    // categoriesid: [],
     description: "",
     dueBy: Date.now() + 1000,
   });
@@ -29,7 +28,6 @@ export default function ItemModal() {
 
   return (
     <div>
-      {/* The button to open modal */}
       <label
         htmlFor="my-modal-3"
         className="btn text-[#dbdbdb]
@@ -38,8 +36,6 @@ export default function ItemModal() {
       >
         New Item
       </label>
-
-      {/* Put this part before </body> tag */}
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
@@ -56,13 +52,11 @@ export default function ItemModal() {
                 type="text"
                 placeholder="Name"
                 className="input input-bordered"
-                //   onChange={"name"}
               />
               <input
                 type="text"
                 placeholder="Description"
                 className="input input-bordered"
-                //   onChange={"description"}
               />
               <button className="btn mt-4">Create</button>
             </div>

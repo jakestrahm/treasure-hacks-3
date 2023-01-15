@@ -1,16 +1,7 @@
-//TODO make editable
-
-/*
-categories: ["test1", "test2"],
-*/
-
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import Categories from "../Categories";
 
-const Details = ({ item, time }) => {
-  //TODO replace wtih redux
-  
+const Details = ({ item, time }) => {  
   const [editingName, setEditingName] = useState(false);
   const [editingDescription, setEditingDescription] = useState(false);
   const [complete, setComplete] = useState(item.complete);
@@ -28,12 +19,10 @@ const Details = ({ item, time }) => {
     console.log(event.detail);
     switch (event.detail) {
       case 1: {
-        //change details's item
         console.log("click");
         break;
       }
       case 2: {
-        //change details's item
         console.log("double click");
         setEditingName(true);
         break;
@@ -48,12 +37,11 @@ const Details = ({ item, time }) => {
     console.log(event.detail);
     switch (event.detail) {
       case 1: {
-        //change details's item
+
         console.log("click");
         break;
       }
       case 2: {
-        //change details's item
         console.log("double click");
         setEditingDescription(true);
         break;

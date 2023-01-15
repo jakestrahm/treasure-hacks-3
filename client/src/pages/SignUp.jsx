@@ -46,7 +46,6 @@ const SignUp = (props) => {
                         value={state.email}
                         onChange={update("email")}
                     />
-                    {/* https://yarnpkg.com/package/react-phone-number-input use to import PhoneInput*/}
                     <p className="session-labels">Phone</p>
                     <input
                         className="session-inputs"

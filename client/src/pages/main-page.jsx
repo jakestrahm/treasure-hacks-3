@@ -3,7 +3,7 @@ const SAMPLE_ITEMS = [
     userId: 0,
     id: "uid1",
     importance: 1,
-    name: "Go To The Gym",
+    name: "Doing Math HW",
     complete: false,
     categories: [
       {
@@ -222,20 +222,18 @@ const SAMPLE_ITEMS = [
   },
 ];
 
-import ItemList from "../components/ItemList";
-import Details from "../components/Details";
+import ItemList from "../components/ItemList/ItemList";
+import Details from "../components/Details/Details";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFocus, selectItem } from "../features/item/itemSlice";
 import { useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
-// import ItemModal from "../components/ItemForm/ItemModal";
+import ItemModal from "../components/ItemModal/ItemModal";
 
 export default function MainPage() {
   const item = useSelector(selectItem);
   const [timeList, setTimeList] = useState([]);
-  // const dispatch = useDispatch()
-
-  //TODO get call for id that is focusedId in redux store
+  const [number,setNumber] = useState();
 
   const timeHandler = (time) => {
     let dateTime = new Date(time);
@@ -244,15 +242,18 @@ export default function MainPage() {
       return [...prevTime, dateTime];
     });
   };
+  const numberHandler = (indexItem) =>{
+    setNumber(indexItem);
+  };
   return (
     <div className="w-fit h-fit">
       <NavBar />
       <div className="flex flex-row justify-center gap-10 mt-10">
         <div className="w-2/12">
-          {/* <ItemModal /> */}
-          <ItemList items={SAMPLE_ITEMS} />
+          <ItemModal />
+          <ItemList items={SAMPLE_ITEMS} indexFinder = {numberHandler}/>
         </div>
-        <div className="w-2/4 h- -sticky top-1000">
+        <div className="w-1/2 -sticky top-1000">
           <Details item={SAMPLE_ITEMS[0]} />
         </div>
       </div>

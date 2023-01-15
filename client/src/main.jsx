@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import './index.css'
 import store from './app/store'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom"
 import ErrorPage from './pages/error-page'
 import MainPage from './pages/main-page'
-import SignUp from './components/SignUp/SignUp'
-import Login from './components/Login/Login'
-import Settings from './components/Settings/Settings'
+import SignUp from './pages/SignUp'
+import Login from './pages/Login'
+import Settings from './pages/Settings'
 
 const router = createBrowserRouter([
     {
