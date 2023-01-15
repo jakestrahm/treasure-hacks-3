@@ -3,7 +3,7 @@ const SAMPLE_ITEMS = [
     userId: 0,
     id: "uid1",
     importance: 1,
-    name: "Go To The Gym",
+    name: "Doing Math HW",
     complete: false,
     categories: [
       {
@@ -222,13 +222,13 @@ const SAMPLE_ITEMS = [
   },
 ];
 
-import ItemList from "../components/ItemList";
-import Details from "../components/Details";
+import ItemList from "../components/ItemList/ItemList";
+import Details from "../components/Details/Details";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFocus, selectItem } from "../features/item/itemSlice";
 import { useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
-import ItemModal from "../components/ItemForm/ItemModal";
+import ItemModal from "../components/ItemModal/ItemModal";
 
 export default function MainPage() {
   const item = useSelector(selectItem);

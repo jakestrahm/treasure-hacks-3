@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignedInNav from "./SignedInNav";
-import SignedOutNav from "./SignedOutNav";
 const NavBar = () => {
     const handleLogout = () => {
         // props.logout().then(() => props.history.push("/"));

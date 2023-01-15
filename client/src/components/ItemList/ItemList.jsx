@@ -1,4 +1,4 @@
-import Item from "../Item";
+import Item from "../Item/Item";
 const ItemList = ({ items, timeList,indexFinder }) => {
   return (
     <div>
