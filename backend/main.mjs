@@ -10,6 +10,8 @@ import AccountController from "./controllers/account.mjs";
 import ItemController from "./controllers/item.mjs";
 import CategoryController from "./controllers/category.mjs";
 
+import { newLogger } from "./utils.mjs"; 
+
 function getConfig() {
     return {
         app: {
@@ -32,7 +34,8 @@ function getConfig() {
 }
 
 
-function main() {
+async function main() {
+    const LOGGER = newLogger();
     const args = yargs(process.argv).argv;
     const environ = args.environ; 
 
@@ -42,17 +45,25 @@ function main() {
 
     const config = getConfig();     
 
-    // connecting to db
+    try {
+        // database
+        await mongoose.connect('mongodb://127.0.0.1:27017/treasure-hacks-3')
+        LOGGER.info("successfully connected to mongodb");
 
-    // building server
-    const server = new Server(
-      authRouter(new AuthController()),
-      accountRouter(new AccountController()),
-      itemRouter(new ItemController()),
-      categoryRouter(new CategoryController())
-    );
+        // server
+        const server = new Server(
+        authRouter(new AuthController()),
+        accountRouter(new AccountController()),
+        itemRouter(new ItemController()),
+        categoryRouter(new CategoryController())
+        );
 
-    server.run(config.app.port);
+        server.run(config.app.port);
+        LOGGER.info(`server running on port ${config.app.port}`);
+
+    } catch(err) {
+        LOGGER.error(error);
+    }
 }
 
 

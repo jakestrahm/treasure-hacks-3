@@ -1,17 +1,21 @@
 class CategoryController {
-  getCategory() {
+  getCategory(req, res) {
     res.send({});
   }
 
-  getCatgeories() {
+  getCategories(req, res) {
     res.send({});
   }
 
-  updateCategory() {
+  createCategory(req, res) {
     res.send({});
   }
 
-  deleteCategory() {
+  updateCategory(req, res) {
+    res.send({});
+  }
+
+  deleteCategory(req, res) {
     res.send({});
   }
 }
