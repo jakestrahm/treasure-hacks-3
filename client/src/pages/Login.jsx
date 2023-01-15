@@ -14,9 +14,6 @@ const Login = (props) => {
             });
     };
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // const newUser = Object.assign({}, state)
-        //props.login(newUser).then(() => props.history.push('/'))
     };
     return (
         <div className="h-screen flex flex-col justify-center items-center content-center">

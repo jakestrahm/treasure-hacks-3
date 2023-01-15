@@ -2,16 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignedInNav = () => {
-    const handleLogout = () => {
-        
-        // props.logout().then(() => props.history.push("/"));
-    };
     return (
         <div className="navbar bg-base-200 p-0 min-h-0">
             <div className="flex-1">
-                {/* <a className="btn btn-ghost normal-case text-l leading-none hover-bordered">
-                  An App
-              </a> */}
             </div>
             <div className="flex-none gap-2">
                 <div className="dropdown dropdown-end p-1">

@@ -19,12 +19,10 @@ const Details = ({ item, time }) => {
     console.log(event.detail);
     switch (event.detail) {
       case 1: {
-        //change details's item
         console.log("click");
         break;
       }
       case 2: {
-        //change details's item
         console.log("double click");
         setEditingName(true);
         break;
@@ -39,12 +37,11 @@ const Details = ({ item, time }) => {
     console.log(event.detail);
     switch (event.detail) {
       case 1: {
-        //change details's item
+
         console.log("click");
         break;
       }
       case 2: {
-        //change details's item
         console.log("double click");
         setEditingDescription(true);
         break;
