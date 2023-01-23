@@ -22,10 +22,10 @@ export default function ItemForm() {
         }
     }
     return (
-        <>
+        <div style={{ background: "lightgreen" }}>
             <input type="text" value={itemName} onChange={(e) => setItemName(e.target.value)} />
             <button onClick={handleAddItem}>add {itemName}</button>
-        </>
+        </div>
     )
 
 }

@@ -23,7 +23,7 @@ export default function filters() {
     }
 
     return (
-        <div>
+        <div style={{ background: "lavender" }}>
             <input type="text" value={filter} onChange={(e) => setFilter(e.target.value)} />
             <button onClick={handleAddFilter}>add</button>
             <ul>

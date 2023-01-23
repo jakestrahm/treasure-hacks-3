@@ -56,7 +56,9 @@ export const itemsSlice = createSlice({
             .addCase(fetchItems.fulfilled, (state, action) => {
                 state.status = 'suceeded'
                 state.items = action.payload
-                state.focusedItemId = state.items[0].id
+                if (state.items.length !== 0) {
+                    state.focusedItemId = state.items[0].id
+                }
             })
             .addCase(fetchItems.rejected, (state, action) => {
                 state.status = 'failed'

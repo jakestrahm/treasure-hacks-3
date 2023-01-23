@@ -15,7 +15,7 @@ export default function Item({ item }) {
         dispatch(focusOnItem(id))
     }
     return (
-        <div onClick={() => handleFocusOnItem(item.id)}>
+        <div style={{ background: "lightblue" }} onClick={() => handleFocusOnItem(item.id)}>
             <ul key={item.id}>
                 <li key={uuidv4()}>{item.name} -
                     <button onClick={() => handleDeleteItem(item.id)}>
