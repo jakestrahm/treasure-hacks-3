@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { selectAllItems, getItemsStatus, getItemsError, fetchItems, addItem } from "./itemsSlice";
 import { useEffect } from "react";
 import Item from './Item'
+import ItemForm from "./ItemForm";
 
 import axios from "axios";
 
@@ -21,9 +22,8 @@ export default function ItemList() {
 
     return (
         <div>
-            {
-                items.map((item) => <Item key={item.id} item={item} />)
-            }
+            <ItemForm />
+            {items.map((item) => <Item key={item.id} item={item} />)}
         </div>
     )
 }

@@ -9,18 +9,12 @@ export const fetchItems = createAsyncThunk('items/fetchItems', async () => {
 })
 
 export const addItem = createAsyncThunk('items/addItem', async (newItem) => {
-    /* ItemCreateObject {
-        name: string
-        categories: List[string]
-        description: optional(string)
-        dueBy: integer
-    } */
     const res = await axios.post(ITEMS_URL, newItem)
     return res.data;
 })
 
-export const updateItem = createAsyncThunk('items/updateItem', async (itemId) => {
-    /* ItemUpdateObject {
+export const updateItem = createAsyncThunk('items/updateItem', async (itemId, itemUpdateObject) => {
+    /* itemupdateobject {
         name: optional(string)
         complete: optional(boolean)
         categories: optional(List[string])
@@ -40,23 +34,29 @@ export const deleteItem = createAsyncThunk('items/deleteItem', async (itemId) =>
 const initialState = {
     items: [],
     status: 'idle', // | 'loading' | 'suceeded' | 'failed'
-    error: null
+    error: null,
+    focusedItemId: null
 }
 
 export const itemsSlice = createSlice({
     name: 'items',
     initialState,
     reducers: {
+        focusOnItem: (state, action) => {
+            state.focusedItemId = action.payload;
+            console.log(state.focusedItemId)
+        }
     },
     extraReducers: (builder) => {
         builder
-            //fetchItems
+            /* fetchItems */
             .addCase(fetchItems.pending, (state) => {
                 state.status = 'loading'
             })
             .addCase(fetchItems.fulfilled, (state, action) => {
                 state.status = 'suceeded'
-                state.items = state.items.concat(action.payload)
+                state.items = action.payload
+                state.focusedItemId = state.items[0].id
             })
             .addCase(fetchItems.rejected, (state, action) => {
                 state.status = 'failed'
@@ -64,8 +64,11 @@ export const itemsSlice = createSlice({
             })
             /* addItem */
             .addCase(addItem.fulfilled, (state, action) => {
-                console.log(action.payload)
-                state.items.push(action.payload)
+                state.status = 'idle'
+            })
+            /* deleteItem */
+            .addCase(deleteItem.fulfilled, (state, action) => {
+                state.status = 'idle'
             })
 
     },
@@ -74,5 +77,7 @@ export const itemsSlice = createSlice({
 export const selectAllItems = (state) => state.items.items;
 export const getItemsStatus = (state) => state.items.status;
 export const getItemsError = (state) => state.items.error;
+export const getFocusedItemId = (state) => state.items.focusedItemId;
 
+export const { focusOnItem } = itemsSlice.actions;
 export default itemsSlice.reducer;
