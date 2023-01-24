@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 const ITEMS_URL = 'https://treasure-hacks-server-production.up.railway.app/api/item'
 
@@ -10,7 +10,7 @@ export const fetchItems = createAsyncThunk('items/fetchItems', async () => {
 
 export const addItem = createAsyncThunk('items/addItem', async (newItem) => {
     const res = await axios.post(ITEMS_URL, newItem)
-    return res.data;
+    return res.data
 })
 
 export const updateItem = createAsyncThunk('items/updateItem', async (itemId, itemUpdateObject) => {
@@ -24,12 +24,13 @@ export const updateItem = createAsyncThunk('items/updateItem', async (itemId, it
     } */
     const res = await axios.put(ITEMS_URL, {
     })
+    return res.data
 })
 
 export const deleteItem = createAsyncThunk('items/deleteItem', async (itemId) => {
     const res = await axios.delete(`${ITEMS_URL}/${itemId}`)
+    return res.data
 })
-
 
 const initialState = {
     items: [],
@@ -43,7 +44,7 @@ export const itemsSlice = createSlice({
     initialState,
     reducers: {
         focusOnItem: (state, action) => {
-            state.focusedItemId = action.payload;
+            state.focusedItemId = action.payload
             console.log(state.focusedItemId)
         }
     },
@@ -72,14 +73,13 @@ export const itemsSlice = createSlice({
             .addCase(deleteItem.fulfilled, (state, action) => {
                 state.status = 'idle'
             })
-
-    },
+    }
 })
 
-export const selectAllItems = (state) => state.items.items;
-export const getItemsStatus = (state) => state.items.status;
-export const getItemsError = (state) => state.items.error;
-export const getFocusedItemId = (state) => state.items.focusedItemId;
+export const selectAllItems = (state) => state.items.items
+export const getItemsStatus = (state) => state.items.status
+export const getItemsError = (state) => state.items.error
+export const getFocusedItemId = (state) => state.items.focusedItemId
 
-export const { focusOnItem } = itemsSlice.actions;
-export default itemsSlice.reducer;
+export const { focusOnItem } = itemsSlice.actions
+export default itemsSlice.reducer

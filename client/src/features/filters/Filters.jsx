@@ -1,11 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux"
-import { addFilter, removeFilter } from "./filtersSlice";
+import { v4 as uuidv4 } from 'uuid'
+import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addFilter, removeFilter } from './filtersSlice'
 
 export default function filters() {
-    const dispatch = useDispatch();
-    const filters = useSelector((state) => state.filters.filters);
+    const dispatch = useDispatch()
+    const filters = useSelector((state) => state.filters.filters)
     const [filter, setFilter] = useState('')
     // const [remove, setRemove] = useState('')
 
@@ -23,7 +23,7 @@ export default function filters() {
     }
 
     return (
-        <div style={{ background: "lavender" }}>
+        <div style={{ background: 'lavender' }}>
             <input type="text" value={filter} onChange={(e) => setFilter(e.target.value)} />
             <button onClick={handleAddFilter}>add</button>
             <ul>
